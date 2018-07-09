@@ -1,0 +1,208 @@
+php artisan serve --host=192.168.0.5 --port=8000
+php artisan infyom:scaffold $MODEL_NAME
+
+php artisan infyom:scaffold Campus
+	descripcion char,100 text
+		required
+
+php artisan infyom:scaffold Decanaturas
+	descripcion char,100 text
+		required
+	campus_id integer:unsigned:foreign,campuses,id hidden
+		required
+
+
+
+
+
+*Personas
+	nombre char,100 text
+		required
+	apellido char,100 text
+		required
+	tipo_identificacion_id integer:unsigned:foreign,tipo_identificacions,id select
+		required
+	identificacion char,100 text
+		required
+	fecha_nacimiento date date
+	direccion char,100 text
+	telefono2 char,100 number
+	telefono1 char,100 number
+	users_id integer:unsigned:foreign,users,id hidden
+
+*Vehiculos
+	persona_id integer:unsigned:foreign,personas,id select
+		required
+	placa char:unique,100 text
+		required
+	modelo char,100 number
+	color char,100 text
+	users_id integer:unsigned:foreign,users,id hidden
+
+*GaleriaVehiculos
+	vehiculo_id integer:unsigned:foreign,vehiculos,id select
+	foto char,199 text
+	users_id integer:unsigned:foreign,users,id hidden
+
+*Equipos
+	codigo char,100 text
+		required
+	descripcion char,100 text
+		required
+	users_id integer:unsigned:foreign,users,id hidden
+
+*EquipoPersonas
+	equipo_id integer:unsigned:foreign,equipos,id hidden
+	persona_id integer:unsigned:foreign,personas,id select
+		required
+	estado_id integer:unsigned:foreign,estados,id select
+		required
+	users_id integer:unsigned:foreign,users,id hidden
+
+** EstadoFactura
+	descripcion char,100 text
+	required
+	users_id integer:unsigned:foreign,users,id hidden
+
+** EstadoComanda
+	descripcion char,100 text
+	required
+	users_id integer:unsigned:foreign,users,id hidden
+
+
+	// caho
+ ** Comanda
+	persona_id integer:unsigned:foreign,personas,id select
+	required
+	vehiculo_id integer:unsigned:foreign,vehiculos,id select
+	required
+	estado_id integer:unsigned:foreign,estado_comandas,id select
+	required
+	observacion char,100 text
+	users_id integer:unsigned:foreign,users,id hidden
+
+
+** ComandaDetalle
+	comanda_id integer:unsigned:foreign,comandas,id hidden
+	concepto_id integer:unsigned:foreign,conceptos,id select
+		required
+	descuentos_id integer:unsigned:foreign,descuentos,id select
+		required
+	valor char,100 text
+		required
+	users_id integer:unsigned:foreign,users,id hidden
+
+** Descuento
+	codigo char,100 text
+		required
+	descripcion char,100 text
+		required
+	porcentaje integer number
+	required
+	users_id integer:unsigned:foreign,users,id hidden
+
+
+//caho
+** Lavado
+	comanda_id integer:unsigned:foreign,comandas,id select
+	required
+	equipo_id integer:unsigned:foreign,equipos,id select
+	required
+	users_id integer:unsigned:foreign,users,id hidden
+
+faturacion
+	persona
+	vehiculo
+	estado
+	users_id integer:unsigned:foreign,users,id hidden
+
+faturacion_detalle
+	factura
+	concepto
+	descuento 
+	valor
+	users_id integer:unsigned:foreign,users,id hidden
+
+*** Proveedores
+	codigo char,100 text
+	required
+	persona_id integer:unsigned:foreign,personas,id select
+	required
+	razon_social char,100 text
+	required
+	nit char,100 text
+	required
+	direccion char,100 text
+	telefono2 char,100 text
+	telefono1 char,100 text
+	users_id integer:unsigned:foreign,users,id hidden
+
+*Marca
+	descripcion char,100 textarea
+		required
+	users_id integer:unsigned:foreign,users,id hidden
+
+*Linea
+	marca_id integer:unsigned:foreign,marcas,id select
+		required
+	descripcion char,100 textarea
+		required
+	users_id integer:unsigned:foreign,users,id hidden
+
+*Remision
+	descripcion char,100 textarea
+		required
+	persona_id integer:unsigned:foreign,personas,id select
+		required
+	proveedor_id integer:unsigned:foreign,proveedores,id select
+		required
+	concepto_id integer:unsigned:foreign,conceptos,id select
+		required
+	tipo_remision_id integer:unsigned:foreign,tipo_remision,id select
+		required
+	fecha date,100 text
+		required
+	valor integer number
+		required
+	users_id integer:unsigned:foreign,users,id hidden
+
+
+*Administrativo
+	persona_id integer:unsigned:foreign,personas,id select
+		required
+	comision integer number
+		required
+	estado_id integer:unsigned:foreign,estados,id select
+		required
+
+
+GananciaAdministrivo
+	valorini integer number
+		required
+	valorfin integer number
+		required
+	porcenganancia integer number
+		required
+
+
+
+
+*validar en personas la fecha nacimiento
+*agregar marca del vehiculo
+*linea del vehiculo
+reporte de equipo carros lavados
+*en la comanda colocar cantidad de conceptos
+diseño factura depende del modelo que envio diego
+*modelo de impresion de comanda que envia diego
+*porcentage de comision en los conceptos para los equipos
+diego va diseñar del informe final de egresos e ingresos
+
+*crear adminsitradores que ganarian comision con respecto a : el producido de los servicios no incluidas las bebidas y aliments
+
+*en el formulario de proveedor en el campo persona que salga el nombre en la busqueda
+en formulario concepto que se puedan agregar los valores
+
+*en los combobox de comcepto de todos los furmularios que salga el codigo y la descripcion
+
+
+

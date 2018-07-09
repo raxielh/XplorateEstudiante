@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Xplorate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+    <link href="css/app5.css" rel="stylesheet">
+    <link href="css/resultado.css" rel="stylesheet">
+        <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    p{
+      text-align: justify;
+    }
+
+    </style>
+    	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/resultado_new.js"></script>
+  </head>
+  <body>
+    	<div class="row">
+	  <div class="col-md-6"></div>
+	  <div class="col-md-6">
+	    	<div class="row">
+		  <div class="col-md-8">
+		  	<h3 class="nom" style="text-align:end">Tu análisis, Rodrigo Garcia</h3>
+		  </div>
+		  <div class="col-md-4">
+		  <h3 style="text-align:center;color:#333;">
+		  <a href="menu.php" class="btn btn-success"><i class="glyphicon glyphicon-arrow-left"></i> Atras</a>
+		   <a href="/estudiante/plataforma/xplorate/resultado_persona.php?doLogout=true&r=10718" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Salir</a></h3>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  	<div class="container-fluid">
+    	<div id="resultado">
+    	<input type="hidden" name="r" id="r" value="10718">
+
+    	  <form action="resultado_persona.php" style="text-align: end;">Ver Resultados Anteriores
+	 <select name="r"style=" height: 30px; width: 156px;">
+	 <option value='10718'>Elija</option>
+
+   <option value="1">2016-12-21 15:54:09</option> <option value="3">2017-01-23 02:41:17</option> <option value="16">2017-02-10 14:21:50</option> <option value="17">2017-02-10 14:25:54</option> <option value="8884">2018-04-05 10:06:23</option> <option value="8885">2018-04-05 10:24:15</option> <option value="8886">2018-04-05 13:57:33</option> <option value="8887">2018-04-05 14:02:01</option> <option value="8888">2018-04-05 15:36:51</option> <option value="8889">2018-04-05 21:32:10</option> <option value="10600">2018-05-10 12:37:38</option> <option value="10718">2018-05-15 15:56:22</option>	 
+
+	  
+	  
+	</select>
+	  <input type="submit" value="Ver" class="btn btn-success">
+	    <a class="btn btn-info" href="resultado_historico.php"><i class="glyphicon glyphicon-calendar"></i> Grafico Historico</a>
+	    <!--<a class="btn btn-danger" href="https://es.surveymonkey.com/r/CBQCCYP">Ayudanos a Mejorar</a>-->
+  </form>
+<hr>
+         <h4 style="text-align:center"> </h4>
+<style>
+        .row {
+    margin-right: 0px; 
+     margin-left: 0px;
+}
+
+.char{
+margin-top: 2.4em;
+}
+  #contenedor2{
+    display: none !important;
+  }
+  #info2{
+    display: none !important;
+    z-index:999999;
+  }
+.c{
+width:49%;
+display:inline-block;
+vertical-align:top;
+margin-top: 4px;
+}
+.c img{
+width:100%;
+}
+@media (max-width: 600px) {
+#resultado{
+padding: 5px;
+}
+body{    
+   overflow-x: hidden;
+}
+	.char{
+	margin-top:0em;/*transform: rotate(90deg);*/
+	}
+  #info{
+    display: none !important;
+  }
+  #info2{
+    display: block !important;
+        z-index:999999;
+  }
+  #contenedor{
+    display: none !important;
+  }
+  #contenedor2{
+    display: block !important;
+  }
+  #txt{
+  margin-top:5em;
+  }
+}
+</style>
+       	  <div class="row">
+         
+          
+<div id="contenedor2">      
+<div class="c"  data-toggle="modal" data-target="#cero"><img src="http://xplorate.com.co/plataforma/xplorate/img/flor/m1.jpg"></div>
+<div class="c" data-toggle="modal" data-target="#primero"><img src="http://xplorate.com.co/plataforma/xplorate/img/flor/m2.jpg"></div>
+<div class="c"  data-toggle="modal" data-target="#segundo"><img src="http://xplorate.com.co/plataforma/xplorate/img/flor/m3.jpg"></div>
+<div class="c" data-toggle="modal" data-target="#tercero"><img src="http://xplorate.com.co/plataforma/xplorate/img/flor/m4.jpg"></div>
+<div class="c"  data-toggle="modal" data-target="#cuarto"><img src="http://xplorate.com.co/plataforma/xplorate/img/flor/m5.jpg"></div>
+</div>
+          
+          
+<div id="contenedor">
+	      <div id="c0" data-toggle="modal" data-target="#cero">
+			
+	      </div>
+
+              <div id="c1" data-toggle="modal" data-target="#primero">
+
+              </div>
+              <div id="c2" data-toggle="modal" data-target="#segundo">
+                
+              </div>
+               <div style="clear: both"></div>
+              <div id="c3" data-toggle="modal" data-target="#tercero">
+
+              </div>
+              <div id="c4" data-toggle="modal" data-target="#cuarto">
+                
+              </div>
+               <div style="clear: both"></div>
+              <p style="text-align:center;margin-top: 1em;">Haga clic en cada dimensión para conocerte.</p>
+            </div>
+            
+            
+           <div class="info" style="margin-top:-450px;margin-left:84%; width:150px;">
+          	<img src="img/flor/info.png" width="140">
+          </div>           
+            
+            
+            
+          </div><br>
+          <hr>
+          <div class="row">
+            <h4 style="text-align:center"> </h4>
+
+          <div class="col-md-12" style="padding-right: 1px;padding-left: 1px; ">
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <div style="position: relative;" id="info">
+  <div style="    position: absolute;
+    z-index: 99;
+    width: 463px;
+    text-align: right;
+    padding: 1em;
+    border: solid 1px #ccc;
+    margin-left: 417px;">
+    <style>
+    .info{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .infor{
+    display: inline-block;
+    vertical-align: top;
+    background: #ff322d;
+    width: 24px;
+    height: 20px;
+    margin-left: 5px
+    }
+       .infoa{
+    display: inline-block;
+    vertical-align: top;
+    background: #f5f54b;
+    width: 24px;
+    height: 20px;
+    margin-left: 5px
+    }
+        .infov{
+    display: inline-block;
+    vertical-align: top;
+    background: #0bb528;
+    width: 24px;
+    height: 20px;
+    margin-left: 5px
+    }
+    
+    
+    </style>
+ <div class="info">De 1 a 2</div><div class="infor"></div>
+  <div class="info">Mayor a 2 y menor 4</div><div class="infoa"></div>
+   <div class="info">De 4 a 5</div><div class="infov"></div>
+ </div>
+ </div>
+ 
+ <div id="info2">
+  <div class="info">De 1 a 2</div><div class="infor"></div><br>
+  <div class="info">Mayor a 2 y menor 4</div><div class="infoa"></div><br>
+   <div class="info">De 4 a 5</div><div class="infov"></div>
+ </div>
+  <div id="chart_div" class="char"></div>
+  <div id="txt">  
+  <h5><strong>Relaciones Sociales </strong></h5>
+  <p id="rsv">
+Tiene relaciones fuertes que le brindan apoyo. Se siente cercana(o) a los demás, y está segura(o) de que sus amistades /familia estarán ahí cuando los necesite. Sigue invirtiendo en sus relaciones personales actuales – invierte tiempo en sus seres queridos; les deja saber que aprecia el apoyo recibido y los tiene como prioridad en su vida.
+  </p>
+  <p id="rsa">
+Tiene buenas relaciones en su vida, pero quizás a veces se siente más conectada(o) y que recibe más apoyo de otros. Continúa invirtiendo en sus relaciones personales actuales – invierte tiempo en sus seres queridos; muestra su aprecio cuando otros le brindan apoyo y los hace una prioridad en la vida. También considera establecer nuevas amistades. 
+  <p id="rsr">
+Lucha con las relaciones personales de su vida, donde siente que está como desconectada(o) y no cuenta con apoyo de los demás. Las relaciones personales que le brindan apoyo son un ingrediente clave para su felicidad y bienestar. Trabaja en conectarse con los demás – invierte tiempo con la gente; muestra su aprecio cuando otros le brindan apoyo y, establecer relaciones positivas es una prioridad en su vida.  
+   </p>
+ 
+  <h5><strong>Salud Física </strong></h5>
+  <p id="efv">
+Tiene un estado físico excelente y es capaz de desempeñar las actividades diarias. Continua manteniendo el buen estado físico mediante el ejercicio regular moderado, come saludablemente, duerme adecuadamente, y realiza otras actividades que encuentra útil.  
+  </p>
+  <p id="efa">
+Generalmente goza de buena salud física, aunque puede estar manejando dolor o padeciendo alguna afección de salud que afecte sus actividades diarias en el trabajo o en lo social. Consultar con su médico para contar con las estrategias del manejo del dolor y para apoyar las actividades cotidianas podría ser útil. Apoya su salud física mediante el ejercicio moderado regular, y come saludablemente; duerme adecuadamente, y realiza otras actividades que encuentra que ayudan a la salud.  
+  <p id="efr">
+No goza de buena salud física y esto afecta su capacidad para realizar sus actividades cotidianas. Si no ha consultado un doctor recientemente, considere recibir ayuda de un especialista o de otro profesional de la salud. Si está trabajando con un doctor, hable con él (ella) acerca de estrategias sobre cómo manejar el dolor y ayudar a que sea efectivo. El ejercicio leve,  comer saludablemente, dormir adecuadamente pueden ser un apoyo.  
+   </p>
+
+  <h5><strong>Bienestar Financiero </strong></h5>
+  <p id="efiv">
+Se siente bien con su estado financiero actual y tiene pocas o nada de deudas. Utiliza lo que tiene para construir un futuro mediante la inversión y tiene ahorros.  Quizás desee consultar un consejero financiero que pueda proveerle sugerencias para mantener fuerte su estado financiero.  
+  </p>
+  <p id="efia">
+No tiene inquietudes sobre su estado financiero actual o sobre el nivel de deudas. Considera rastrear sus gastos y cerciorarse de que sólo gaste el dinero que posee. Quizás sea útil consultar un consejero financiero que pueda proveerle métodos para consolidar algunas de sus deudas y mejorar su estado financiero. 
+  <p id="efir">
+Le inquieta su situación financiera actual y puede estar en la lucha con sus deudas.  Considera útil rastrear sus gastos y cerciorarse de que sólo gaste el dinero que posee, y se concentra en pagar las deudas. Debe consultar un consejero financiero que pueda ayudarla(o) a mejorar su estado financiero. 
+   </p>
+ 
+   <h5><strong>Bienestar Emocional  </strong></h5>
+  <p id="eev">
+Está satisfecha(o) con la vida y experimenta sentimientos positivos de manera regular. La investigación muestra que sentirse positivamente promueven la salud física, las buenas relaciones personales e inclusive el éxito en el trabajo. Continua participando en las actividades que lo(a) ayudan a sentirse positivo(a) y satisfecho(a) con la vida.  
+  </p>
+  <p id="eea">
+ Generalmente está satisfecha(o) con la vida, aunque experimenta una mezcla de emociones positivas y negativas. Según lo que está aconteciendo en la vida, los sentimientos mixtos podrían ser bastante saludables. Le apunta a las actividades que le den un sentido de satisfacción. Considere que con frecuencia experimenta emociones positivas versus negativas, y busca maneras de cambiar a experimentar mayor número de emociones positivas de manera regular.  
+  <p id="eer">
+Está insatisfecha(o) con la vida y experimenta seguidas emociones negativas. La investigación ha demostrado que frecuentes emociones negativas está relacionado con resultados pobres en  la vida. La investigación en la psicología positiva está encontrando que las actividades positivas pueden ayudar a generar emociones positivas.  Podría ser útil visitar a un consejero para poder atender la falta de saludables emociones. 
+   </p>
+   
+   
+  <h5><strong>Propósito</strong></h5>
+  <p id="sv">
+Tiene un sentido de significado, de propósito y dirección en la vida. Le contribuye a los demás y encuentra significado en lo que realiza.  Continua desempeñando actividades que apoyan el propósito propio y busca inspirar a otros, mediante su vida y sus acciones.  
+  </p>
+  <p id="sa">
+Tiene algún sentido de significado, de propósito y dirección en la vida aunque quizás también se pregunte en que medida las metas para su vida estén en realidad llenas de significado. Es bastante común que la gente reflexione sobre del propósito que tiene. Pueda ser útil pensar en qué actividades le brindan la mayor alegría y lo (la) hacen sentir vivo(a), y encuentra maneras de buscar esos asuntos. También pudiera considerar maneras de cómo contribuir con la vida de los demás. 
+  <p id="sr">
+ No tiene un sentido fuerte de significado, ni de propósito y lucha por encontrar la dirección correcta en la vida. Es bastante común que la gente reflexione sobre del propósito que tiene. Pueda ser útil pensar en qué actividades le brindan la mayor alegría y lo (la) hacen sentir vivo(a), y encuentra maneras de buscar esos asuntos. También pudiera considerar maneras de cómo contribuir con la vida de los demás. Si se encuentra sintiéndose como si la vida no tuviere significado, hable con un consejero o con un amigo en el que confía. 
+ 
+ </p>   
+   
+  </div>
+            
+       
+          </div>
+        </div>	
+	</div>
+    <br><br>
+
+<!-- Modal -->
+<div class="modal fade" id="cero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Propósito</h4>
+      </div>
+      <div class="modal-body">
+	  
+  <p id="sv2">
+Tiene un sentido de significado, de propósito y dirección en la vida. Le contribuye a los demás y encuentra significado en lo que realiza.  Continua desempeñando actividades que apoyan el propósito propio y busca inspirar a otros, mediante su vida y sus acciones.  
+  </p>
+  <p id="sa2">
+Tiene algún sentido de significado, de propósito y dirección en la vida aunque quizás también se pregunte en que medida las metas para su vida estén en realidad llenas de significado. Es bastante común que la gente reflexione sobre del propósito que tiene. Pueda ser útil pensar en qué actividades le brindan la mayor alegría y lo (la) hacen sentir vivo(a), y encuentra maneras de buscar esos asuntos. También pudiera considerar maneras de cómo contribuir con la vida de los demás. 
+  <p id="sr2">
+ No tiene un sentido fuerte de significado, ni de propósito y lucha por encontrar la dirección correcta en la vida. Es bastante común que la gente reflexione sobre del propósito que tiene. Pueda ser útil pensar en qué actividades le brindan la mayor alegría y lo (la) hacen sentir vivo(a), y encuentra maneras de buscar esos asuntos. También pudiera considerar maneras de cómo contribuir con la vida de los demás. Si se encuentra sintiéndose como si la vida no tuviere significado, hable con un consejero o con un amigo en el que confía. 
+ 
+ </p>   
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="primero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Salud Física</h4>
+      </div>
+      <div class="modal-body">
+  <p id="efv2">
+Tiene un estado físico excelente y es capaz de desempeñar las actividades diarias. Continua manteniendo el buen estado físico mediante el ejercicio regular moderado, come saludablemente, duerme adecuadamente, y realiza otras actividades que encuentra útil.  
+  </p>
+  <p id="efa2">
+Generalmente goza de buena salud física, aunque puede estar manejando dolor o padeciendo alguna afección de salud que afecte sus actividades diarias en el trabajo o en lo social. Consultar con su médico para contar con las estrategias del manejo del dolor y para apoyar las actividades cotidianas podría ser útil. Apoya su salud física mediante el ejercicio moderado regular, y come saludablemente; duerme adecuadamente, y realiza otras actividades que encuentra que ayudan a la salud.  
+  <p id="efr2">
+No goza de buena salud física y esto afecta su capacidad para realizar sus actividades cotidianas. Si no ha consultado un doctor recientemente, considere recibir ayuda de un especialista o de otro profesional de la salud. Si está trabajando con un doctor, hable con él (ella) acerca de estrategias sobre cómo manejar el dolor y ayudar a que sea efectivo. El ejercicio leve,  comer saludablemente, dormir adecuadamente pueden ser un apoyo.  
+   </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="segundo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bienestar Financiero </h4>
+      </div>
+      <div class="modal-body">
+  <p id="efiv2">
+Se siente bien con su estado financiero actual y tiene pocas o nada de deudas. Utiliza lo que tiene para construir un futuro mediante la inversión y tiene ahorros.  Quizás desee consultar un consejero financiero que pueda proveerle sugerencias para mantener fuerte su estado financiero.  
+  </p>
+  <p id="efia2">
+No tiene inquietudes sobre su estado financiero actual o sobre el nivel de deudas. Considera rastrear sus gastos y cerciorarse de que sólo gaste el dinero que posee. Quizás sea útil consultar un consejero financiero que pueda proveerle métodos para consolidar algunas de sus deudas y mejorar su estado financiero. 
+  <p id="efir2">
+Le inquieta su situación financiera actual y puede estar en la lucha con sus deudas.  Considera útil rastrear sus gastos y cerciorarse de que sólo gaste el dinero que posee, y se concentra en pagar las deudas. Debe consultar un consejero financiero que pueda ayudarla(o) a mejorar su estado financiero. 
+   </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="tercero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Relaciones Sociales </h4>
+      </div>
+      <div class="modal-body">
+  <p id="rsv2">
+Tiene relaciones fuertes que le brindan apoyo. Se siente cercana(o) a los demás, y está segura(o) de que sus amistades /familia estarán ahí cuando los necesite. Sigue invirtiendo en sus relaciones personales actuales – invierte tiempo en sus seres queridos; les deja saber que aprecia el apoyo recibido y los tiene como prioridad en su vida.
+  </p>
+  <p id="rsa2">
+Tiene buenas relaciones en su vida, pero quizás a veces se siente más conectada(o) y que recibe más apoyo de otros. Continúa invirtiendo en sus relaciones personales actuales – invierte tiempo en sus seres queridos; muestra su aprecio cuando otros le brindan apoyo y los hace una prioridad en la vida. También considera establecer nuevas amistades. 
+  <p id="rsr2">
+Lucha con las relaciones personales de su vida, donde siente que está como desconectada(o) y no cuenta con apoyo de los demás. Las relaciones personales que le brindan apoyo son un ingrediente clave para su felicidad y bienestar. Trabaja en conectarse con los demás – invierte tiempo con la gente; muestra su aprecio cuando otros le brindan apoyo y, establecer relaciones positivas es una prioridad en su vida.  
+   </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="cuarto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bienestar Emocional</h4>
+      </div>
+      <div class="modal-body">
+  <p id="eev2">
+Está satisfecha(o) con la vida y experimenta sentimientos positivos de manera regular. La investigación muestra que sentirse positivamente promueven la salud física, las buenas relaciones personales e inclusive el éxito en el trabajo. Continua participando en las actividades que lo(a) ayudan a sentirse positivo(a) y satisfecho(a) con la vida.  
+  </p>
+  <p id="eea2">
+ Generalmente está satisfecha(o) con la vida, aunque experimenta una mezcla de emociones positivas y negativas. Según lo que está aconteciendo en la vida, los sentimientos mixtos podrían ser bastante saludables. Le apunta a las actividades que le den un sentido de satisfacción. Considere que con frecuencia experimenta emociones positivas versus negativas, y busca maneras de cambiar a experimentar mayor número de emociones positivas de manera regular.  
+  <p id="eer2">
+Está insatisfecha(o) con la vida y experimenta seguidas emociones negativas. La investigación ha demostrado que frecuentes emociones negativas está relacionado con resultados pobres en  la vida. La investigación en la psicología positiva está encontrando que las actividades positivas pueden ayudar a generar emociones positivas.  Podría ser útil visitar a un consejero para poder atender la falta de saludables emociones. 
+   </p>
+  
+      </div>
+    </div>
+  </div>
+ 
+</div>
+<div style="padding:2em;text-align:end"><a href="/estudiante/plataforma/xplorate/resultado_persona.php?doLogout=true&r=10718" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Salir</a></div> 
+
+
+
+
+    
+  </body>
+</html>
