@@ -16,7 +16,11 @@
     {!! Form::number('orden', null, ['class' => 'form-control']) !!}
 </div>
 
-<input type="hidden" value="{{($preguntas->categoria)}}" name="categoria">
+<!-- Valor Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('categoria', 'Categoria:') !!}
+    {!! Form::select('categoria',$Categoria, null, ['class' => 'form-control chosen-select','id'=>'categoria_id']) !!}
+</div>
 
 
 <!-- Submit Field -->

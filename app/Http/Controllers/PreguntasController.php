@@ -12,6 +12,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Categoria;
 
 class PreguntasController extends AppBaseController
 {
@@ -119,8 +120,8 @@ class PreguntasController extends AppBaseController
 
             return redirect(route('preguntas.index'));
         }
-
-        return view('preguntas.edit')->with('preguntas', $preguntas);
+        $Categoria=Categoria::pluck('titulo','id');
+        return view('preguntas.edit')->with('preguntas', $preguntas)->with('Categoria', $Categoria);
     }
 
     /**

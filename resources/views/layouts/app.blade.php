@@ -245,5 +245,37 @@
         }
     </script>
     @yield('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" language="javascript">
+    $(function () {
+        $("#mi_lista").sortable({update: function () {
+            var ordem_atual = $(this).sortable("serialize");
+            console.log(ordem_atual);
+            ordem_atual=ordem_atual+'&'+'_token={{csrf_token()}}';
+            $.post("/proceso_orden_categoria", ordem_atual, function (retorno) {
+                console.log(retorno);
+            });
+            }
+        });
+        $("#mi_lista2").sortable({update: function () {
+            var ordem_atual = $(this).sortable("serialize");
+            console.log(ordem_atual);
+            ordem_atual=ordem_atual+'&'+'_token={{csrf_token()}}';
+            $.post("/proceso_orden_preguntas", ordem_atual, function (retorno) {
+                console.log(retorno);
+            });
+            }
+        });
+        $("#mi_lista3").sortable({update: function () {
+            var ordem_atual = $(this).sortable("serialize");
+            console.log(ordem_atual);
+            ordem_atual=ordem_atual+'&'+'_token={{csrf_token()}}';
+            $.post("/proceso_orden_pr", ordem_atual, function (retorno) {
+                console.log(retorno);
+            });
+            }
+        });
+    });
+</script>
 </body>
 </html>

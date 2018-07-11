@@ -32,6 +32,10 @@ Route::get('/historico', 'TestController@historico')->name('historico');
 Route::get('/consulta_cambio', 'TestController@consulta_cambio')->name('consulta_cambio');
 Route::get('/importar', 'ImportarController@index')->name('importar');
 Route::post('/importar', 'ImportarController@index2')->name('importar');
+Route::post('/proceso_orden_categoria', 'OrdenController@proceso_orden_categoria')->name('proceso_orden_categoria');
+Route::post('/proceso_orden_preguntas', 'OrdenController@proceso_orden_preguntas')->name('proceso_orden_preguntas');
+Route::post('/proceso_orden_pr', 'OrdenController@proceso_orden_pr')->name('proceso_orden_pr');
+
 
 
 

@@ -123,6 +123,13 @@
       z-index: 99999999;
     }
     </style>
+<style>
+@media (max-width: 600px) {
+  #flor,.oculto {
+    display: none;
+  }
+}
+</style>
   </head>
   <body>
     <div class="container">
@@ -158,7 +165,7 @@
               </div>
             </div>
           </div>
-          <p style="text-align:center;margin-top: 1em;">Haga clic en cada dimensión para conocerte.</p>
+          <p style="text-align:center;margin-top: 1em;" class="oculto">Haga clic en cada dimensión para conocerte.</p>
           <div id="chart_div"></div>
           <h3>Relaciones Sociales</h3>
           <p>{{$d_social}}</p>

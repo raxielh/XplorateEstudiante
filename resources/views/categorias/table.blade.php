@@ -1,4 +1,4 @@
-<table class="table_d table table-responsive" id="preguntas-table" style="width: 100%">
+<table class="table table-responsive" id="preguntas-table" style="width: 100%">
     <thead>
         <tr>
             <th>Titulo</th>
@@ -7,13 +7,13 @@
             <th style="width: 130px">Action</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="mi_lista">
     @foreach($categorias as $categoria)
-        <tr>
+        <tr id="miorden_{!! $categoria->id !!}">
             <td>{!! $categoria->titulo !!}</td>
             <td>{!! $categoria->desc !!}</td>
             <td>{!! $categoria->orden !!}</td>
-            <td>
+            <td  width="10%">
                 {!! Form::open(['route' => ['categorias.destroy', $categoria->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('categorias.show', [$categoria->id]) !!}" class='btn btn-default btn-xl'><i class="glyphicon glyphicon-eye-open"></i></a>

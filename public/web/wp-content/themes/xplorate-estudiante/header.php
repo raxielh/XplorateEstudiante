@@ -54,7 +54,7 @@
 	                            <a href="<?php bloginfo( 'url' ); ?>?page_id=29"><span class="inline">Test</span></a>
 	                        </li>
 	                        <li>
-	                            <a href="<?php bloginfo( 'url' ); ?>"><span class="inline">Contacto</span></a>
+	                            <a href="<?php bloginfo( 'url' ); ?>?page_id=57"><span class="inline">Contacto</span></a>
 	                        </li>
 	                    </ul>
 	                </nav>

@@ -24,10 +24,10 @@
                 </div>
             </div>
           <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6" style="margin-bottom: 1em">
                   <p class="justificado">Por favor crea tu usuario y contraseña haciendo <a  href="/registro">clic aqui</a>, a continuación ingresa tu identificacion y contraseña para iniciar el Test. Si ya te registrastes digita tu identificacón y contraseña para ver tus resultados.
                     </p>
-          <a  href="/registro" class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i> Registrate</a>
+          <a  href="/registro" class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i> Registrate</a><br>
                 </div>
               <div class="col-md-6">
                   <div>

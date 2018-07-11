@@ -33,6 +33,11 @@
 </span></a>
 </li>
 <li>
-    <a href="/web/wp-admin"><i class="fa fa-edit"></i><span>Pagina Web
-</span></a>
+<form name="loginform" id="loginform" action="http://127.0.0.1:8000/web/wp-login.php" method="post">
+    <input type="hidden" name="log" id="user_login" class="input" value="admin" size="20">
+    <input type="hidden" name="pwd" id="user_pass" class="input" value="123456" size="20">
+    <center><input type="submit" style="text-align: center;" name="wp-submit" id="wp-submit" class="btn btn-default" value="Entrar a Wordpress"></center>
+    <input type="hidden" name="redirect_to" value="http://127.0.0.1:8000/web/wp-admin/">
+    <input type="hidden" name="testcookie" value="1">
+</form>
 </li>

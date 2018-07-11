@@ -64,9 +64,9 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody  id="mi_lista3">
     @foreach($posiblesRespuestas as $posiblesRespuestas)
-        <tr>
+        <tr id="miorden_{!! $posiblesRespuestas->id !!}">
             <td>{!! $posiblesRespuestas->descripcion !!}</td>
             <td>{!! $posiblesRespuestas->orden !!}</td>
             <td>{!! $posiblesRespuestas->valor !!}</td>

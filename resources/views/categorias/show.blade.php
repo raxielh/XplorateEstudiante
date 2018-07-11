@@ -41,18 +41,18 @@
                 <div class="box box-primary">
                     <div class="box-body">
 
-                        <table class="table_d table table-responsive" id="preguntas-table" style="width: 100%">
+                        <table class="table table-responsive" id="preguntas-table" style="width: 100%">
                             <thead>
                                 <tr>
                                     <th>Descripcion</th>
                                 <th>Estado</th>
                                 <th>Orden</th>
-                                    <th style="width: 130px">Action</th>
+                                    <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="mi_lista2">
                             @foreach($preguntas as $preguntas)
-                                <tr>
+                                <tr id="miorden_{!! $preguntas->id !!}">
                                     <td>{!! $preguntas->descripcion !!}</td>
                                     <td>{!! $preguntas->nombre !!}</td>
                                     <td>{!! $preguntas->orden !!}</td>
