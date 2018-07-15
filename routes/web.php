@@ -65,6 +65,9 @@ Route::resource('subtitulo2s', 'Subtitulo2Controller');
 Route::get('/vista_generar_rd', 'ReportesController@v_generar_rd')->name('vista_generar_rd');
 Route::post('/generar_rd', 'ReportesController@generar_rd')->name('generar_rd');
 
+Route::get('/vista_generar_cd', 'ReportesController@v_generar_cd')->name('vista_generar_cd');
+Route::post('/generar_cd', 'ReportesController@generar_cd')->name('generar_cd');
+
 Route::get('/vista_cht', 'ReportesController@vista_cht')->name('vista_cht');
 Route::post('/generar_cht', 'ReportesController@generar_cht')->name('generar_cht');
 

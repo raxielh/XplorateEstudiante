@@ -88,7 +88,11 @@ class SubtituloController extends AppBaseController
             SELECT s2.`id`,p.`descripcion` as pregunta,s2.`variable` FROM `subtitulo2` s2,`preguntas` p WHERE s2.`idsubtitulo2`=".$id."  AND s2.`pregunta`=p.`id`
         ");
 
-        return view('subtitulos.show')->with('subtitulo', $subtitulo)->with('subtitulo2s', $subtitulo2s);
+        $preguntas=DB::table('preguntas')
+            ->select('descripcion', 'id')
+            ->pluck('descripcion','id');
+
+        return view('subtitulos.show')->with('subtitulo', $subtitulo)->with('subtitulo2s', $subtitulo2s)->with('preguntas', $preguntas);
     }
 
     /**

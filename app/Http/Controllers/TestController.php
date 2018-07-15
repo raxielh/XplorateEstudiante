@@ -149,7 +149,14 @@ class TestController extends Controller
             $apellido=$e->apellido;
         }
         if(count($est)==1){
-            return view('test.menu')->with('nombre', $nombre)->with('apellido', $apellido);
+
+            $hizo_test=DB::select("
+                SELECT count(*) as c FROM b_respuestas_historic_1 WHERE persona='".$cedula."'
+            ");
+            foreach ($hizo_test as $h) {
+                $hizo=$h->c;
+            }
+            return view('test.menu')->with('nombre', $nombre)->with('apellido', $apellido)->with('hizo', $hizo);
         }else{
             return view('test.index');
         }

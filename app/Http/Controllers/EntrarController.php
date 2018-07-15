@@ -25,7 +25,13 @@ class EntrarController extends Controller
 
 		if(count($est)==1){
 			Session::put('estudiante',$cedula);
-			return view('test.menu')->with('nombre', $nombre)->with('apellido', $apellido);
+			$hizo_test=DB::select("
+                SELECT count(*) as c FROM b_respuestas_historic_1 WHERE persona='".$cedula."'
+            ");
+            foreach ($hizo_test as $h) {
+                $hizo=$h->c;
+            }
+			return view('test.menu')->with('nombre', $nombre)->with('apellido', $apellido)->with('hizo', $hizo);
 		}else{
 			Flash::error('Datos Incorrectos');
 			return view('test.index');

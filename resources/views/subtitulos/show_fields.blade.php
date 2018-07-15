@@ -11,11 +11,13 @@
 		    {!! Form::label('descsubtitulo1', 'Descripcion:') !!}
 		    <p>{!! $subtitulo->descsubtitulo1 !!}</p>
 		</div>
+        {!! Form::open(['route' => 'subtitulo2s.store']) !!}
+
+            @include('subtitulo2s.fields')
+
+        {!! Form::close() !!}
 	</div>
 	<div class="col-md-9">
-       <!--<h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px;margin-right: 25px;" href="{!! route('subtitulo2s.create') !!}">Agregar nuevo</a>
-        </h1>-->
 		<table class="table table-responsive" id="subtitulo2s-table">
 		    <thead>
 		        <tr>
@@ -28,7 +30,7 @@
 		    @foreach($subtitulo2s as $subtitulo2)
 		        <tr>
 		            <td>{!! $subtitulo2->pregunta !!}</td>
-		            <td>{!! $subtitulo2->variable !!}</td>
+		            <td style="text-transform: none;">{!! $subtitulo2->variable !!}</td>
 		            <td>
 		                {!! Form::open(['route' => ['subtitulo2s.destroy', $subtitulo2->id], 'method' => 'delete']) !!}
 		                <div class='btn-group'>

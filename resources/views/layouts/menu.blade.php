@@ -20,7 +20,12 @@
 </li>
 
 <li class="{{ Request::is('vista_generar_rd*') ? 'active' : '' }}">
-    <a href="{!! route('vista_generar_rd') !!}"><i class="fa fa-edit"></i><span>Generar RowData
+    <a href="{!! route('vista_generar_rd') !!}"><i class="fa fa-edit"></i><span>Generar Datos Crudos
+</span></a>
+</li>
+
+<li class="{{ Request::is('vista_generar_cd*') ? 'active' : '' }}">
+    <a href="{!! route('vista_generar_cd') !!}"><i class="fa fa-edit"></i><span>Generar Datos Computo
 </span></a>
 </li>
 

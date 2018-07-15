@@ -55,6 +55,8 @@
           </div>
         
         </div>
+        @if ($hizo === 0)
+        @else
         <div class="col-md-6">
           <div class="menu">
               <a href="/analisis" class="menu-li">
@@ -65,6 +67,8 @@
                     </a> 
           </div>           
         </div>
+        @endif
+
       </div>
     </div>
     <script>
