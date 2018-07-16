@@ -1,7 +1,10 @@
 <li class="{{ Request::is('home*') ? 'active' : '' }}">
     <a href="/home"><i class="fa fa-home"></i><span> Inicio</span></a>
 </li>
-
+<li class="{{ Request::is('souvenir*') ? 'active' : '' }}">
+    <a href="{!! route('souvenir') !!}"><i class="fa fa-edit"></i><span>Souvenir
+</span></a>
+</li>
 <li class="{{ Request::is('usuarios*') ? 'active2' : '' }}">
     <a href="{!! route('usuarios.index') !!}"><i class="fa fa-gears"></i><span> Usuarios</span></a>
 </li>
@@ -37,6 +40,7 @@
     <a href="{!! route('importar') !!}"><i class="fa fa-edit"></i><span>Importar
 </span></a>
 </li>
+
 <li>
 <form name="loginform" id="loginform" action="http://127.0.0.1:8000/web/wp-login.php" method="post">
     <input type="hidden" name="log" id="user_login" class="input" value="admin" size="20">
