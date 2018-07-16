@@ -12,7 +12,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                <form action="/generar_rd" method="post">
+                <form action="/generar_cht" method="post">
                             @csrf
                     <div class="row">
                         <div class="col-md-3">

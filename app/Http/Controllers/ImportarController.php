@@ -20,7 +20,10 @@ class ImportarController extends Controller
 
     public function index()
     {
-    	return view('importar.index');
+    	$campus = DB::select("SELECT * FROM ps_campus");
+    	$programa = DB::select("SELECT * FROM ps_acad_prog where acad_career='PREG' order by campus");
+
+    	return view('importar.index')->with('campus', $campus)->with('programa', $programa);
     }
 
     public function index2(request $request)

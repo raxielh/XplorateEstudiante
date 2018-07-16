@@ -31,6 +31,47 @@
                     {!! Form::close() !!}
                     </div>
                     <a href="{{URL::asset('/datos/plantilla.xlsx')}}" class="btn btn-info">Desarcargar Plantilla</a>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Codigo</th>
+                                  <th scope="col">Programa</th>
+                                  <th scope="col">Campus</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @foreach ($programa as $programa)
+                                <tr>
+                                  <th scope="row">{{ $programa->acad_prog }}</th>
+                                  <td>{{ $programa->acad_prog_desc }}</td>
+                                  <td>{{ $programa->campus }}</td>
+                                </tr>
+                                @endforeach
+                              </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Codigo</th>
+                                  <th scope="col">Campus</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @foreach ($campus as $campus)
+                                <tr>
+                                  <th scope="row">{{ $campus->campus }}</th>
+                                  <td>{{ $campus->descr }}</td>
+                                </tr>
+                                @endforeach
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>   
             </div>
         </div>
